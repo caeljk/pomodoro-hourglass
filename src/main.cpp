@@ -1,5 +1,10 @@
 #include <iostream>
+#ifdef _WIN32
+#  define NOMINMAX
+#  include <windows.h>
+#endif
 int main() {
-    std::cout << "pomodoro focus timer initialized.\n";
+    std::cout << "initialized
+";
     return 0;
 }
