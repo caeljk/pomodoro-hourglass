@@ -10,6 +10,8 @@ namespace ansi {
     }
     constexpr const char* RST  = "\033[0m";
     constexpr const char* CLR  = "\033[2J\033[H";
+    constexpr const char* HIDE = "\033[?25l";
+    constexpr const char* SHOW = "\033[?25h";
 }
 int main() {
     std::cout << ansi::CLR << ansi::mv(1, 1) << "Ready" << ansi::RST << std::endl;
