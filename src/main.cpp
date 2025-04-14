@@ -5,6 +5,9 @@
 #  include <windows.h>
 #endif
 namespace ansi {
+    inline std::string rgb(int r, int g, int b) {
+        return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + ";m";
+    }
     inline std::string mv(int r, int c) {
         return "\033[" + std::to_string(r) + ";" + std::to_string(c) + "H";
     }
