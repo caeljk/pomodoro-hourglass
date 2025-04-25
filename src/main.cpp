@@ -5,6 +5,7 @@
 #  include <windows.h>
 #endif
 namespace ansi {
+    constexpr const char* EL   = "\033[K";
     inline std::string rgb(int r, int g, int b) {
         return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + ";m";
     }
