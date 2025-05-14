@@ -17,9 +17,13 @@ namespace term {
         SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
     }
     void restore() {}
+    bool kbhit() { return false; }
+    int getch() { return 0; }
 #else
     void init() {}
     void restore() {}
+    bool kbhit() { return false; }
+    int getch() { return 0; }
 #endif
 }
 int main() {
