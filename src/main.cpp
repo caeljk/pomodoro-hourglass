@@ -3,6 +3,7 @@
 #ifdef _WIN32
 #  define NOMINMAX
 #  include <windows.h>
+#  include <conio.h>
 #else
 #  include <termios.h>
 #  include <unistd.h>
@@ -17,13 +18,13 @@ namespace term {
         SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
     }
     void restore() {}
-    bool kbhit() { return false; }
-    int getch() { return 0; }
+    bool kbhit() { return _kbhit() != 0; }
+    int getch() { return _getch(); }
 #else
     void init() {}
     void restore() {}
-    bool kbhit() { return false; }
-    int getch() { return 0; }
+    bool kbhit() { return _kbhit() != 0; }
+    int getch() { return _getch(); }
 #endif
 }
 int main() {
