@@ -42,3 +42,12 @@ namespace term {
 int main() {
     return 0;
 }
+namespace term {
+    void beep() {
+#ifdef _WIN32
+        Beep(880, 200);
+#else
+        std::cout << '\a' << std::flush;
+#endif
+    }
+}
