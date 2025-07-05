@@ -51,3 +51,4 @@ namespace term {
 #endif
     }
 }
+enum class Phase { WORK, SHORT_BREAK, LONG_BREAK };
