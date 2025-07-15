@@ -52,3 +52,13 @@ namespace term {
     }
 }
 enum class Phase { WORK, SHORT_BREAK, LONG_BREAK };
+struct Timer {
+    int work_s  = 25 * 60;
+    int short_s =  5 * 60;
+    int long_s  = 15 * 60;
+    Phase phase   = Phase::WORK;
+    int   done    = 0;
+    int   elapsed = 0;
+    bool  paused  = false;
+    bool  quit    = false;
+};
