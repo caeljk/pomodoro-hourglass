@@ -61,4 +61,9 @@ struct Timer {
     int   elapsed = 0;
     bool  paused  = false;
     bool  quit    = false;
+    int total() const {
+        if (phase == Phase::SHORT_BREAK) return short_s;
+        if (phase == Phase::LONG_BREAK) return long_s;
+        return work_s;
+    }
 };
