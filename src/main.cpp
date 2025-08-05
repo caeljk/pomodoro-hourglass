@@ -66,4 +66,5 @@ struct Timer {
         if (phase == Phase::LONG_BREAK) return long_s;
         return work_s;
     }
+    int remaining() const { return total() - elapsed; }
 };
