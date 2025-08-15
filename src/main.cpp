@@ -67,4 +67,5 @@ struct Timer {
         return work_s;
     }
     int remaining() const { return total() - elapsed; }
+    double progress() const { return (double)elapsed / total(); }
 };
