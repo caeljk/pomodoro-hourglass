@@ -68,4 +68,10 @@ struct Timer {
     }
     int remaining() const { return total() - elapsed; }
     double progress() const { return (double)elapsed / total(); }
+    void tick() {
+        if (paused || quit) return;
+        if (++elapsed >= total()) {
+            elapsed = 0;
+        }
+    }
 };
