@@ -68,10 +68,18 @@ struct Timer {
     }
     int remaining() const { return total() - elapsed; }
     double progress() const { return (double)elapsed / total(); }
+    void advance() {
+        if (phase == Phase::WORK) {
+            phase = Phase::SHORT_BREAK;
+        } else {
+            phase = Phase::WORK;
+        }
+        elapsed = 0;
+    }
     void tick() {
         if (paused || quit) return;
         if (++elapsed >= total()) {
-            elapsed = 0;
+            advance();
         }
     }
 };
