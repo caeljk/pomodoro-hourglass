@@ -70,7 +70,8 @@ struct Timer {
     double progress() const { return (double)elapsed / total(); }
     void advance() {
         if (phase == Phase::WORK) {
-            phase = Phase::SHORT_BREAK;
+            ++done;
+            phase = (done % 4 == 0) ? Phase::LONG_BREAK : Phase::SHORT_BREAK;
         } else {
             phase = Phase::WORK;
         }
