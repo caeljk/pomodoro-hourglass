@@ -84,3 +84,7 @@ struct Timer {
         }
     }
 };
+namespace hg {
+    const int HALF = 8;
+    const int IMAX = 16;
+}
