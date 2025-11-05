@@ -90,3 +90,4 @@ namespace hg {
     inline int iw(int r) { return IMAX - 2 * (r - 1); }
     const int CAP = HALF * (IMAX + 2) / 2;
 }
+// Temporary comment line testing layout
