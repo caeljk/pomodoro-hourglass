@@ -295,4 +295,4 @@ void draw(std::ostream& out, const Timer& tmr, int row0, int col0, int frame) {
     put(2 * HALF + 2, gc + "\u255a" + ansi::rep("\u2550", IMAX) + "\u255d");
 }
 }
-// dev build stage 2
+// dev build stage 3
