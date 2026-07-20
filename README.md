@@ -47,3 +47,18 @@ Once built, you can run the executable directly from the `build` directory:
 # On Windows command prompt/PowerShell:
 # .\build\pomodoro.exe
 ```
+
+### Stevan Mode
+
+### this mode is an addition requested by stevan
+
+
+ive made a new namespace that is for color themes: 
+```
+`constexpr Theme STEVAN_MODE = { {255, 0, 0}, {0, 255, 0}, {0, 0, 255} };`
+```
+
+this provides the user with the ability to instantiate the 24-bit RGB channels for the three elements.
+but named with a twist, and i haven't added YAML abilities to pass variables by file.
+
+
