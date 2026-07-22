@@ -1,6 +1,6 @@
 # ⏳ Pomodoro Hourglass Focus Timer
 
-Created by [@caeljk](https://github.com/caeljk) ([caeljacobkennedy@hotmail.com](mailto:caeljacobkennedy@hotmail.com))
+Created by [@caeljk](https://github.com/caeljk) ([caeljacobkennedy@hotmail.com](mailto:caeljknet@gmail.com))
 
 A modern, terminal-based C++20 Pomodoro focus timer featuring a dynamic ASCII hourglass animation, big-digit digital clock display, live system wall-clock, custom color themes, and cross-platform non-blocking terminal controls. Built using pure ANSI escape codes with zero third-party dependencies.
 
