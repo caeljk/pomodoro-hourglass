@@ -1,6 +1,8 @@
-# Pomodoro Hourglass Focus Timer
+# ⏳ Pomodoro Hourglass Focus Timer
 
-A modern C++ TUI Pomodoro focus timer featuring a dynamic depleting ASCII hourglass visualization, big-digit clock display, live system wall-clock, custom color themes, and non-blocking terminal controls. Built using pure ANSI escape codes without third-party visual library dependencies.
+Created by [@caeljk](https://github.com/caeljk) ([caeljacobkennedy@hotmail.com](mailto:caeljacobkennedy@hotmail.com))
+
+A modern, terminal-based C++20 Pomodoro focus timer featuring a dynamic ASCII hourglass animation, big-digit digital clock display, live system wall-clock, custom color themes, and cross-platform non-blocking terminal controls. Built using pure ANSI escape codes with zero third-party dependencies.
 
 ---
 
@@ -59,4 +61,4 @@ g++ -std=c++20 -O3 -Wall \
 The timer supports multiple themes via `config.h`:
 - **Amber (Default)**: Classic warm focus theme.
 - **Tron**: Neon cyan / deep blue theme.
-- **Stevan Mode**: Custom palette scheme (`constexpr Theme STEVAN_MODE`).
+- **Stevan Mode**: Custom palette preset for @stevanfreeborn to customize himself.

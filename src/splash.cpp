@@ -34,9 +34,11 @@ void splash(int rows, int cols) {
             << ansi::rep("\u2500", BOX_W - 2) << "\u2518" << ansi::RST;
 
   // ── Title & version string ───────────────────────────────────────────────
-  std::cout << ansi::mv(br + 2, bc + 4) << am << ansi::BOLD << "pomodoro"
+  std::cout << ansi::mv(br + 1, bc + 4) << am << ansi::BOLD << "pomodoro"
+            << ansi::RST << gc << "  v1.0" << ansi::RST;
+  std::cout << ansi::mv(br + 2, bc + 4) << gc << "terminal focus timer"
             << ansi::RST;
-  std::cout << ansi::mv(br + 3, bc + 4) << gc << "terminal focus timer  v1.0"
+  std::cout << ansi::mv(br + 3, bc + 4) << dc << "by @caeljk (github.com/caeljk)"
             << ansi::RST;
 
   std::cout.flush();
@@ -62,8 +64,9 @@ void splash(int rows, int cols) {
   }
 
   // ── Theme Selection Prompt ──────────────────────────────────────────────
-  std::cout << ansi::mv(br + BOX_H - 2, bc + 4) << gc << "Select theme: " << am
-            << "[1] Amber  " << ansi::rgb(0, 255, 255) << "[2] Tron"
+  std::cout << ansi::mv(br + BOX_H - 2, bc + 2) << gc << "Theme: " << am
+            << "[1] Amber " << ansi::rgb(0, 255, 255) << "[2] Tron "
+            << ansi::rgb(180, 100, 255) << "[3] Stevan"
             << ansi::RST << std::flush;
 
   bool selected = false;

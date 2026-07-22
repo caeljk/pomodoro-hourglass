@@ -25,7 +25,7 @@ struct Theme {
 constexpr Theme THEME_AMBER = {{220, 140, 40}, {70, 210, 130}, {80, 160, 240}};
 constexpr Theme THEME_TRON  = {{0, 255, 255},  {0, 150, 255},  {0, 50, 255}};
 
-// Custom theme preset
+// Stevan Mode: Custom palette preset for @stevanfreeborn to customize himself
 constexpr Theme STEVAN_MODE = {{0, 255, 255},  {0, 150, 255},  {0, 50, 255}};
 
 // Mutable active color theme (default is Amber).

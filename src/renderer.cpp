@@ -191,6 +191,7 @@ void render(std::ostream &out, const Timer &tmr, int /*rows*/, int cols,
 
     out << ansi::mv(1, 2) << amber_c << ansi::BOLD << "pomodoro" << ansi::RST
         << gray_c << "  \xe2\x80\x94  terminal focus timer" << ansi::RST
+        << dim_c << "  by @caeljk" << ansi::RST
         << ansi::EL;
 
     out << ansi::mv(1, wc_col) << gray_c << wc << ansi::RST;
