@@ -2,16 +2,17 @@
 
 Created by [@caeljk](https://github.com/caeljk) ([caeljknet@gmail.com](mailto:caeljknet@gmail.com))
 
-A modern, terminal-based C++20 Pomodoro focus timer featuring a dynamic ASCII hourglass animation, big-digit digital clock display, live system wall-clock, custom color themes, and cross-platform non-blocking terminal controls. Built using pure ANSI escape codes with zero third-party dependencies.
+A modern, terminal-based C++20 Pomodoro focus timer featuring a dynamic ASCII hourglass animation, big-digit unicode full block digital clock display, live system clock, custom color themes (rgb via rgb value), and cross-platform non-blocking terminal controls. Built using pure ANSI escape codes with zero third-party dependencies for the TUI. 
+
+The refactor of the old project was done with AI to assist with allowing for modularity when adding new features, discovered when adding Stevan mode... the original cpp is left in the project directory for reference to the original file.
 
 ---
 
 ## 📁 Project Layout
 
 - **`src/modular-version/`**: **(Recommended)** Fully modular C++20 refactored implementation split into clean header and source files (`pomodoro.cpp`, `timer.h`/`timer.cpp`, `renderer.h`/`renderer.cpp`, `config.h`, `term.h`, `splash.h`/`splash.cpp`, `ansi.h`).
-- **`src/main.cpp`**: Monolithic single-file C++ implementation.
 
----
+- ** the original src/main.cpp remains in the project dir as it was split into headers and cpp files. and will be removed in subsequent ver. ** 
 
 ## 🏗️ Modular Architecture (`src/modular-version`)
 
