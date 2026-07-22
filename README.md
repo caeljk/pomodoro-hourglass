@@ -32,12 +32,12 @@ A modern, terminal-based C++20 Pomodoro focus timer featuring a dynamic ASCII ho
 To build and run the modular version:
 
 ```bash
-cd src/modular-version
 
-# Compile with C++20 and optimizations
+# Compile with C++20 and optimizations from the pomodoro-hourglass dir
+
 g++ -std=c++20 -O3 -Wall \
-    pomodoro.cpp timer.cpp renderer.cpp splash.cpp \
-    -o pomodoro
+    src\pomodoro.cpp src\timer.cpp src\renderer.cpp src\splash.cpp \
+    -o bin\pomodoro
 
 # Run the executable
 ./pomodoro
