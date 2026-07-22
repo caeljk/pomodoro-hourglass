@@ -1,64 +1,62 @@
 # Pomodoro Hourglass Focus Timer
 
-A modern C++ TUI Pomodoro timer featuring a depleting ASCII hourglass and dynamic side-by-side digital clock display. Built using pure ANSI escape codes without external dependencies.
+A modern C++ TUI Pomodoro focus timer featuring a dynamic depleting ASCII hourglass visualization, big-digit clock display, live system wall-clock, custom color themes, and non-blocking terminal controls. Built using pure ANSI escape codes without third-party visual library dependencies.
 
-## Features
-- Dynamic depleting sand visualization matching session progress
-- Color-coded phases (Amber = Focus, Mint = Short Break, Sky Blue = Long Break)
-- Large block-digit countdown clock
-- Developer boot status splash sequence
-- Live system wall-clock tracking
+---
 
-## Controls
-- [space] - Pause / resume
-- [s] - Skip current session
-- [r] - Reset current timer
-- [q] - Quit application
+## 📁 Project Layout
 
-## Build Instructions
+- **`src/modular-version/`**: **(Recommended)** Fully modular C++20 refactored implementation split into clean header and source files (`pomodoro.cpp`, `timer.h`/`timer.cpp`, `renderer.h`/`renderer.cpp`, `config.h`, `term.h`, `splash.h`/`splash.cpp`, `ansi.h`).
+- **`src/main.cpp`**: Monolithic single-file C++ implementation.
 
-### Prerequisites
-- A modern C++ compiler supporting C++17 (`g++`, `clang++`, or `MSVC`)
-- CMake 3.16+ (optional, for project generation)
+---
 
-### Option 1: Quick compile (Direct G++)
-Open your terminal in this directory and run:
+## 🏗️ Modular Architecture (`src/modular-version`)
+
+| Module File | Contents & Responsibilities |
+|---|---|
+| **`config.h`** | `Color` (RGB) & `Theme` structs, presets (`THEME_AMBER`, `THEME_TRON`, `STEVAN_MODE`), global `inline Theme active` |
+| **`ansi.h`** | ANSI escape sequence helper functions (`mv`, `rgb`, screen clear, cursor toggles) |
+| **`term.h`** | Cross-platform raw terminal abstraction (Win32 & POSIX support for `init`, `restore`, `kbhit`, `getch`, `size`, `beep`) |
+| **`timer.h` / `timer.cpp`** | `Phase` enum (Work, Short Break, Long Break), `Timer` state machine logic, duration calculations, tick countdown, auto phase advance |
+| **`renderer.h` / `renderer.cpp`** | Hourglass math (`sand_top`, `sand_bot`), 5-line big digit glyphs (`DG`), live wall clock, full UI layout composition |
+| **`splash.h` / `splash.cpp`** | Startup splash screen animation, boot checklist, and interactive theme selector |
+| **`pomodoro.cpp`** | Entry point `main()`, signal handling (`SIGINT`, `SIGTERM`), double-buffered output, 100ms render loop |
+
+---
+
+## ⚡ Quick Start & Compilation
+
+To build and run the modular version:
+
 ```bash
-# create build folder
-mkdir build
+cd src/modular-version
 
-# compile
-g++ -std=c++17 -O2 -o build/pomodoro src/main.cpp
+# Compile with C++20 and optimizations
+g++ -std=c++20 -O3 -Wall \
+    pomodoro.cpp timer.cpp renderer.cpp splash.cpp \
+    -o pomodoro
+
+# Run the executable
+./pomodoro
 ```
 
-### Option 2: CMake build
-Generate build scripts and compile using CMake:
-```bash
-# configure build structure
-cmake -S . -B build
+---
 
-# compile the executable
-cmake --build build --config Release
-```
+## 🎮 Controls
 
-Once built, you can run the executable directly from the `build` directory:
-```bash
-./build/pomodoro
-# On Windows command prompt/PowerShell:
-# .\build\pomodoro.exe
-```
+| Key | Action |
+|---|---|
+| `<Space>` | Pause / resume countdown |
+| `s` | Skip to next phase |
+| `r` | Reset current timer |
+| `q` | Quit application |
 
-### Stevan Mode
+---
 
-### this mode is an addition requested by stevan
+## 🎨 Theme Support & Customization
 
-
-ive made a new namespace that is for color themes: 
-```
-`constexpr Theme STEVAN_MODE = { {255, 0, 0}, {0, 255, 0}, {0, 0, 255} };`
-```
-
-this provides the user with the ability to instantiate the 24-bit RGB channels for the three elements.
-but named with a twist, and i haven't added YAML abilities to pass variables by file.
-
-
+The timer supports multiple themes via `config.h`:
+- **Amber (Default)**: Classic warm focus theme.
+- **Tron**: Neon cyan / deep blue theme.
+- **Stevan Mode**: Custom palette scheme (`constexpr Theme STEVAN_MODE`).

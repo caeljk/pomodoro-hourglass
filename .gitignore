@@ -1,0 +1,14 @@
+# Binaries, Executables & Build directories
+bin/
+build/
+*.exe
+*.o
+*.a
+*.so
+*.dylib
+pomodoro
+src/pomodoro
+src/pomodoro.exe
+
+# Archives
+*.zip
